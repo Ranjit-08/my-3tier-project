@@ -5,7 +5,17 @@ function loadUsers() {
     .then(res => res.json())
     .then(data => {
       document.getElementById("users").innerHTML =
-        data.map(u => `<li>${u.name} — ${u.email}</li>`).join("");
+        data
+          .map(u => `
+            <li>
+              <div class="user-info">
+                <strong>${u.name}</strong>
+                <span>${u.email}</span>
+              </div>
+              <button class="delete-btn" onclick="deleteUser(${u.id})">Delete</button>
+            </li>
+          `)
+          .join("");
     });
 }
 
@@ -27,6 +37,12 @@ function addUser() {
     document.getElementById("email").value = "";
     loadUsers();
   });
+}
+
+function deleteUser(id) {
+  fetch(`${API_URL}/users/${id}`, {
+    method: "DELETE"
+  }).then(loadUsers);
 }
 
 loadUsers();
