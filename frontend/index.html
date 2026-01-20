@@ -1,15 +1,29 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Three Tier App</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <title>Three Tier Application</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-<h1>User Management</h1>
-<input id="name" placeholder="Name">
-<input id="email" placeholder="Email">
-<button onclick="addUser()">Add User</button>
-<ul id="users"></ul>
-<script src="script.js"></script>
+
+  <div class="container">
+    <h1>Three Tier User Management</h1>
+    <p class="subtitle">Frontend → Backend → RDS</p>
+
+    <div class="card">
+      <h3>Add User</h3>
+      <input id="name" placeholder="Enter name" />
+      <input id="email" placeholder="Enter email" />
+      <button onclick="addUser()">Add User</button>
+    </div>
+
+    <div class="card">
+      <h3>Users List</h3>
+      <ul id="users"></ul>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
