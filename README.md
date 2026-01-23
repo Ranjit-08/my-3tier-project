@@ -54,7 +54,13 @@ my-3tier-project/
 
 ### 1. Install Dependencies
 install git , mariadb , nodejs , 
-
+# nodejs
+curl -fsSL https://rpm.nodesource.com/setup_18.x | sudo bash -
+sudo yum install -y nodejs
+# git 
+yum install git -y 
+# mariadb 
+yum install mariadb105-server -y
 # rds connecction
 mysql -h database-1.cwv0y4skwfjn.us-east-1.rds.amazonaws.com -u admin -p
 Enter password: 
